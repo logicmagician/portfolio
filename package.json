@@ -1,0 +1,32 @@
+{
+  "name": "rakebul-engineering-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next build",
+    "deploy": "npm run build && gh-pages -d out",
+    "typecheck": "tsc --noEmit",
+    "test": "bash tests/run-all.sh"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.17.10",
+    "framer-motion": "^11.11.17",
+    "lucide-react": "^0.468.0",
+    "next": "^14.2.21",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@types/three": "^0.170.0",
+    "esbuild": "^0.24.0",
+    "gh-pages": "^6.2.0",
+    "typescript": "^5.7.2"
+  }
+}

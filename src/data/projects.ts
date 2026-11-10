@@ -1,0 +1,77 @@
+import type { Project } from "@/types/content";
+
+// Project descriptions and links come from the owner's GitHub profile README.
+// Add a project by appending an object here; the directory and detail pages update automatically.
+// Repository links are omitted because none were provided; add `repo` once verified.
+
+export const projects: Project[] = [
+  {
+    slug: "routinenest",
+    title: "RoutineNest",
+    category: "Software",
+    summary: "A client-side daily routine and productivity Progressive Web App with offline availability and custom habit tracking.",
+    description: "A client-side daily routine and productivity Progressive Web App (PWA).",
+    features: [
+      "Lightweight, with zero dependencies",
+      "Offline availability",
+      "Custom habit tracking",
+    ],
+    tags: ["HTML5", "CSS3", "JavaScript"],
+    status: "Progressive Web App",
+    featured: true,
+    links: { demo: "https://logicmagician.github.io/RoutineNest/" },
+    images: [],
+  },
+  {
+    slug: "mcq-studio",
+    title: "MCQ Studio",
+    category: "Software",
+    summary: "An interactive testing platform for creating, attempting and analyzing multiple-choice quizzes.",
+    description: "An interactive testing platform designed to create, attempt, and analyze multiple-choice quizzes.",
+    features: [],
+    tags: ["JavaScript", "HTML/CSS", "Data handling"],
+    status: "Interactive web app",
+    featured: true,
+    links: { demo: "https://logicmagician.github.io/mcq-studio/" },
+    images: [],
+  },
+  {
+    slug: "dc-to-ac-inverter",
+    title: "DC to AC Inverter",
+    category: "Hardware & Embedded Systems",
+    summary: "Circuit design and power transformation system built for efficient DC-to-AC conversion.",
+    description: "Circuit design and power transformation system built for efficient DC-to-AC conversion.",
+    features: [],
+    tags: ["Circuit design", "Power conversion"],
+    status: "Hardware project",
+    featured: true,
+    links: {},
+    images: [],
+  },
+  {
+    slug: "auto-power-switching-station",
+    title: "Auto Power Switching Power Station",
+    category: "Hardware & Embedded Systems",
+    summary: "Automated relay switching logic for uninterruptible power transition between primary grid and secondary backup sources.",
+    description: "Automated relay switching logic ensuring uninterruptible power transition between primary grid and secondary backup sources.",
+    features: [],
+    tags: ["Relay logic", "Power switching", "Backup power"],
+    status: "Hardware project",
+    featured: false,
+    links: {},
+    images: [],
+  },
+  {
+    slug: "weather-monitoring-station",
+    title: "Weather Monitoring Station",
+    category: "Hardware & Embedded Systems",
+    summary: "Embedded environmental monitoring station collecting telemetry data: temperature, humidity and pressure.",
+    description: "Embedded environmental monitoring station collecting telemetry data (temperature, humidity, pressure).",
+    features: [],
+    tags: ["Embedded systems", "Telemetry", "Sensors"],
+    status: "Hardware project",
+    featured: false,
+    links: {},
+    images: [],
+  },
+];

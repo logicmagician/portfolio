@@ -1,0 +1,86 @@
+import type { JourneyEntry } from "@/types/content";
+
+// Education, learning and professional entries. Only dates the owner has supplied are shown;
+// anything else reads "Date to be added". Keep entries in the order they should appear.
+
+export const journey: JourneyEntry[] = [
+  {
+    id: "bsc-computer-engineering",
+    kind: "education",
+    title: "BSc in Computer Engineering",
+    organization: "American International University of Bangladesh",
+    period: "Current · third year",
+    detail: "Third-year computer engineering student.",
+    featured: true,
+  },
+  {
+    id: "expected-graduation",
+    kind: "milestone",
+    title: "Expected graduation",
+    organization: "American International University of Bangladesh",
+    period: "June 2028",
+    detail: "Planned completion of the BSc in Computer Engineering.",
+    upcoming: true,
+    featured: true,
+  },
+  {
+    id: "cs50-intro",
+    kind: "learning",
+    title: "CS50's Introduction to Computer Science",
+    organization: "edX",
+    period: "Date to be added",
+    detail: "Online course in computer science fundamentals.",
+    featured: false,
+  },
+  {
+    id: "cs50-sql",
+    kind: "learning",
+    title: "CS50's SQL",
+    organization: "edX",
+    period: "Date to be added",
+    detail: "Online course in relational databases and SQL.",
+    featured: false,
+  },
+  {
+    id: "ericsson-edge-academia",
+    kind: "learning",
+    title: "Automation, Networking & Artificial Intelligence",
+    organization: "Ericsson Edge Academia",
+    period: "Date to be added",
+    detail: "Programme covering automation, networking and artificial intelligence.",
+    featured: true,
+  },
+  {
+    id: "zad-academy",
+    kind: "learning",
+    title: "MA in Islamic Studies Program",
+    organization: "ZAD Academy",
+    period: "Date to be added",
+    detail: "Programme of study at ZAD Academy.",
+    featured: false,
+  },
+  {
+    id: "business-analyst",
+    kind: "experience",
+    title: "Business Analyst",
+    period: "Date to be added",
+    detail: "Business analysis work.",
+    featured: false,
+  },
+  {
+    id: "tutor",
+    kind: "experience",
+    title: "Tutor",
+    period: "Date to be added",
+    detail: "Tutoring.",
+    featured: false,
+  },
+  {
+    id: "content-creator",
+    kind: "experience",
+    title: "Content Creator & Writer",
+    period: "Date to be added",
+    detail: "Creating and writing content, including on social media.",
+    featured: false,
+  },
+];

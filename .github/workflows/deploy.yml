@@ -1,0 +1,58 @@
+# Builds the static site and publishes it to GitHub Pages.
+# One-time setup: repository Settings -> Pages -> Build and deployment -> Source: "GitHub Actions".
+# Optional repository variables (Settings -> Secrets and variables -> Actions -> Variables):
+#   GITHUB_USERNAME, ORCID_ID, NEXT_PUBLIC_FORMSPREE_ENDPOINT, NEXT_PUBLIC_ANALYTICS_ID
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        # npm ci for reproducible installs when package-lock.json is committed; npm install otherwise.
+        run: |
+          if [ -f package-lock.json ]; then npm ci; else npm install; fi
+      - name: Type check
+        run: npm run typecheck
+      - name: Run tests
+        run: npm test
+      - name: Build static site
+        run: npm run build
+        env:
+          GITHUB_USERNAME: ${{ vars.GITHUB_USERNAME }}
+          GITHUB_TOKEN: ${{ github.token }}
+          ORCID_ID: ${{ vars.ORCID_ID }}
+          NEXT_PUBLIC_FORMSPREE_ENDPOINT: ${{ vars.NEXT_PUBLIC_FORMSPREE_ENDPOINT }}
+          NEXT_PUBLIC_ANALYTICS_ID: ${{ vars.NEXT_PUBLIC_ANALYTICS_ID }}
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
