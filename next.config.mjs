@@ -3,7 +3,7 @@
 // Set this to your repository name for a project site
 // (https://USERNAME.github.io/REPOSITORY), or leave it as "" for a user site
 // (https://USERNAME.github.io). The placeholder value disables the base path.
-const repoName = "YOUR_GITHUB_REPOSITORY";
+const repoName = "portfolio";
 
 const isProd = process.env.NODE_ENV === "production";
 const isConfigured = repoName !== "YOUR_GITHUB_REPOSITORY" && repoName !== "";
